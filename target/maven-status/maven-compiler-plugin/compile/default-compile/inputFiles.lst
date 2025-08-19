@@ -1,0 +1,9 @@
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/InventoryServiceApplication.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/controllers/InventoryController.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/entities/EventEntity.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/entities/VenueEntity.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/repositories/EventRepository.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/repositories/VenueRepository.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/responses/EventInventoryResponse.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/responses/VenueInvetoryResponse.java
+/Users/andrereginatto/Desktop/projects/Spring-Microservices-Ticket-Booking-System/src/main/java/com/example/inventory_service/services/InventoryService.java
