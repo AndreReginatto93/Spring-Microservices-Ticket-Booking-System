@@ -1,12 +1,10 @@
 package com.example.inventory_service.controllers;
 
 import com.example.inventory_service.responses.EventInventoryResponse;
+import com.example.inventory_service.responses.VenueInvetoryResponse;
 import com.example.inventory_service.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,10 @@ public class InventoryController {
     @GetMapping("/inventory/events")
     public @ResponseBody List<EventInventoryResponse> inventoryGetAllEvents(){
         return inventoryService.getAllEvents();
+    }
+
+    @GetMapping("/inventory/venue/{venueId}")
+    public @ResponseBody VenueInvetoryResponse inventoryByVenueId(@PathVariable("venueId") Long venueId){
+        return inventoryService.getVenueInformation(venueId);
     }
 }

@@ -1,9 +1,11 @@
 package com.example.inventory_service.services;
 
 import com.example.inventory_service.entities.EventEntity;
+import com.example.inventory_service.entities.VenueEntity;
 import com.example.inventory_service.repositories.EventRepository;
 import com.example.inventory_service.repositories.VenueRepository;
 import com.example.inventory_service.responses.EventInventoryResponse;
+import com.example.inventory_service.responses.VenueInvetoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,14 @@ public class InventoryService {
                 .capacity(event.getLeftCapacity())
                 .venue(event.getVenue())
                 .build()).collect(Collectors.toList());
+    }
+
+    public VenueInvetoryResponse getVenueInformation(Long venueId){
+        final VenueEntity venue = venueRepository.findById(venueId).orElse(null);
+
+        return VenueInvetoryResponse.builder()
+                .venueid(venue.getId())
+                .venueName(venue.getName())
+                .venueCapacity(venue.getTotalCapacity()).build();
     }
 }
