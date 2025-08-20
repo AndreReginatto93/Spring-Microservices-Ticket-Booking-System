@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/inventory")
 public class InventoryController {
     private final InventoryService inventoryService;
 
@@ -19,22 +19,22 @@ public class InventoryController {
         this.inventoryService = inventoryService;
     }
 
-    @GetMapping("/inventory/events")
+    @GetMapping("/events")
     public @ResponseBody List<EventInventoryResponse> inventoryGetAllEvents(){
         return inventoryService.getAllEvents();
     }
 
-    @GetMapping("/inventory/venue/{venueId}")
+    @GetMapping("/venue/{venueId}")
     public @ResponseBody VenueInvetoryResponse inventoryByVenueId(@PathVariable("venueId") Long venueId){
         return inventoryService.getVenueInformation(venueId);
     }
 
-    @GetMapping("/inventory/event/{eventId}")
+    @GetMapping("/event/{eventId}")
     public @ResponseBody EventInventoryResponse getEventInventory(@PathVariable("eventId") Long eventId){
         return inventoryService.getEventInventory(eventId);
     }
 
-    @PutMapping("/inventory/event/{eventId}/capacity/{capacity}")
+    @PutMapping("/event/{eventId}/capacity/{capacity}")
     public ResponseEntity<Void> updateEventCapacity(@PathVariable("eventId") Long eventId,
                                                     @PathVariable("capacity") Long ticketBooked){
         inventoryService.updateEventCapacity(eventId, ticketBooked);
