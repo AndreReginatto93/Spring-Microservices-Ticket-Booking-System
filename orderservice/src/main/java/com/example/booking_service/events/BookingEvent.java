@@ -1,4 +1,4 @@
-package com.example.booking_service.event;
+package com.example.booking_service.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class BookingEvent {
     private Long userId;
     private Long eventId;

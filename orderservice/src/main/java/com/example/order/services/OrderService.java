@@ -1,6 +1,6 @@
 package com.example.order.services;
 
-import com.example.booking_service.event.BookingEvent;
+import com.example.booking_service.events.BookingEvent;
 import com.example.order.clients.InventoryServiceClient;
 import com.example.order.entities.OrderEntity;
 import com.example.order.repositories.OrderRepository;
