@@ -1,0 +1,3 @@
+com/example/apigateway/ApigatewayApplication.class
+com/example/apigateway/routes/BookingServiceRoutes.class
+com/example/apigateway/routes/InventoryServiceRoutes.class
