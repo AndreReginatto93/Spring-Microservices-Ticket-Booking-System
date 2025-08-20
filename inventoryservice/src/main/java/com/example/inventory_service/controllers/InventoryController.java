@@ -4,6 +4,7 @@ import com.example.inventory_service.responses.EventInventoryResponse;
 import com.example.inventory_service.responses.VenueInvetoryResponse;
 import com.example.inventory_service.services.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,5 +32,12 @@ public class InventoryController {
     @GetMapping("/inventory/event/{eventId}")
     public @ResponseBody EventInventoryResponse getEventInventory(@PathVariable("eventId") Long eventId){
         return inventoryService.getEventInventory(eventId);
+    }
+
+    @PutMapping("/inventory/event/{eventId}/capacity/{capacity}")
+    public ResponseEntity<Void> updateEventCapacity(@PathVariable("eventId") Long eventId,
+                                                    @PathVariable("capacity") Long ticketBooked){
+        inventoryService.updateEventCapacity(eventId, ticketBooked);
+        return ResponseEntity.ok().build();
     }
 }

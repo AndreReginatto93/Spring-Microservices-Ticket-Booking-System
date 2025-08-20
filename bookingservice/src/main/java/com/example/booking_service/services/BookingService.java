@@ -23,7 +23,9 @@ public class BookingService {
     private final KafkaTemplate<String, BookingEvent> kafkaTemplate;
 
     @Autowired
-    public BookingService(CustomerRepository customerRepository, InventoryServiceClient inventoryServiceClient, KafkaTemplate<String, BookingEvent> kafkaTemplate) {
+    public BookingService(CustomerRepository customerRepository,
+                          InventoryServiceClient inventoryServiceClient,
+                          KafkaTemplate<String, BookingEvent> kafkaTemplate) {
         this.customerRepository = customerRepository;
         this.inventoryServiceClient = inventoryServiceClient;
         this.kafkaTemplate = kafkaTemplate;
@@ -60,8 +62,8 @@ public class BookingService {
 
     private BookingEvent createBookingEvent(BookingRequest request, CustomerEntity customer, InventoryResponse inventoryResponse){
         return BookingEvent.builder()
-                .eventId(request.getEventId())
                 .userId(customer.getId())
+                .eventId(request.getEventId())
                 .ticketCount(request.getTicketCount())
                 .totalPrice(inventoryResponse.getTicketPrice().multiply(BigDecimal.valueOf(request.getTicketCount())))
                 .build();

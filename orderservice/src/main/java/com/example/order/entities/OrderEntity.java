@@ -10,6 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
 @Data
 @Builder
 @NoArgsConstructor
@@ -34,6 +35,6 @@ public class OrderEntity {
     private Long customerId;
 
     @Column(name = "event_id")
-    private Long event_id;
+    private Long eventId;
 
 }
